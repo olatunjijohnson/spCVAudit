@@ -1,0 +1,56 @@
+url: https://olatunjijohnson.github.io/spCVAudit/
+template:
+  bootstrap: 5
+  bslib:
+    bg: '#fcfbf7'
+    fg: '#172b34'
+    primary: '#146c75'
+    border-radius: 0.25rem
+    base_font: 'system-ui'
+    heading_font: 'system-ui'
+    code_font: 'monospace'
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    intro:
+      text: Start here
+      href: articles/getting-started.html
+home:
+  title: Spatial cross-validation for your prediction target
+  description: Compare spatial CV schemes with weighted targets, distance diagnostics, correlation contrasts and Gaussian reference calculations.
+articles:
+- title: Work through an analysis
+  navbar: Tutorials
+  contents:
+  - getting-started
+  - choosing-cv
+  - theory-and-limits
+  - jura
+reference:
+- title: Define your prediction task
+  desc: Declare the target and construct or import a complete CV partition.
+  contents:
+  - prediction_target
+  - cv_folds
+  - spatial_folds
+- title: Describe spatial dependence
+  contents:
+  - spatial_covariance
+  - spatial_correlation
+  - estimate_covariance
+- title: Audit and compare schemes
+  contents:
+  - audit_cv
+  - distance_contrasts
+  - compare_cv_schemes
+  - plot.spcv_audit
+- title: Understand the Gaussian reference model
+  contents:
+  - gaussian_cv
+  - gaussian_target_mse
+footer:
+  structure:
+    left: developed_by
+    right: built_with

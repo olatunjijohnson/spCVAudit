@@ -1,0 +1,13 @@
+^\.github$
+^\.gitignore$
+^\.Rbuildignore$
+^_pkgdown\.yml$
+^pkgdown$
+^docs$
+^cran-comments\.md$
+^CRAN-READINESS\.md$
+^CONTRIBUTING\.md$
+^LICENSE\.md$
+^codecov\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$

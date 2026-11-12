@@ -1,0 +1,11 @@
+.Rhistory
+.RData
+.Rproj.user/
+*.Rcheck/
+*.tar.gz
+docs/
+Rplots.pdf
+inst/doc/
+vignettes/*.html
+vignettes/*.R
+vignettes/*_files/

@@ -1,0 +1,24 @@
+Package: spCVAudit
+Title: Audit Spatial Cross-Validation Against Prediction Targets
+Version: 0.1.0
+Authors@R: person("Olatunji", "Johnson",
+    email = "olatunjijohnson21111@gmail.com", role = c("aut", "cre"))
+Description: Compare spatial cross-validation designs with a declared prediction
+    target using nearest-neighbour distances and correlation contrasts. Supports
+    weighted targets, explicit fold validation, selection among candidate schemes,
+    covariance estimation, and Gaussian reference calculations that separate the
+    contribution of the nearest observation from that of the other observations.
+    These diagnostics assess differences in prediction conditions; they do not
+    establish data leakage or guarantee accurate prediction-error estimation.
+License: MIT + file LICENSE
+URL: https://olatunjijohnson.github.io/spCVAudit/,
+    https://github.com/olatunjijohnson/spCVAudit
+BugReports: https://github.com/olatunjijohnson/spCVAudit/issues
+Depends: R (>= 4.1.0)
+Imports: stats, graphics, grDevices, utils
+Suggests: sf, CAST, gstat, testthat (>= 3.0.0), knitr, rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1

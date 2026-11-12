@@ -1,0 +1,76 @@
+test_that("fold validation rejects overlap, duplication and omissions", {
+  expect_error(cv_folds(list(list(train = 1:2, test = 2:3)), 3), "overlapping")
+  expect_error(cv_folds(list(list(train = 1, test = 2)), 3), "exactly one")
+  expect_error(cv_folds(list(list(train = c(1, 1), test = 2)), 2), "unique")
+  expect_error(cv_folds(list(list(train = 3, test = 1:2)), 2), "within")
+  expect_error(cv_folds(rep(1, 3), 3), "nonempty")
+  f <- cv_folds(c("a", "b", "a", "b"), 4)
+  expect_equal(f[[1]]$test, c(1L, 3L))
+  expect_equal(f[[1]]$train, c(2L, 4L))
+})
+
+test_that("constructors respect partitions, buffers and caller random state", {
+  xy <- cbind(seq_len(30), rep(0:2, 10))
+  set.seed(999)
+  original <- .Random.seed
+  a <- spatial_folds(xy, 3, seed = 3)
+  b <- spatial_folds(xy, 3, seed = 3)
+  expect_identical(.Random.seed, original)
+  expect_identical(a, b)
+  expect_equal(sort(unlist(lapply(a, `[[`, "test"))), seq_len(30))
+  block <- spatial_folds(xy, 3, "block", seed = 2)
+  buffered <- spatial_folds(xy, 3, "buffered", buffer = 0, seed = 2)
+  expect_identical(block, buffered)
+  expect_error(spatial_folds(xy, 3, "buffered", buffer = 1e6), "nonempty")
+  expect_error(spatial_folds(xy, 1), "k")
+})
+
+test_that("audits use full target training and fold-specific validation training", {
+  xy <- cbind(c(-1, 0, 1), 0)
+  q <- prediction_target(rbind(c(2, 0), c(3, 0)), weights = c(3, 1))
+  a <- audit_cv(xy, 1:3, q, spatial_covariance(1, 0.8))
+  expect_equal(a$validation_distance, rep(1, 3))
+  expect_equal(a$target_distance, c(1, 2))
+  expect_equal(a$diagnostics[["A"]], 0.25)
+  expect_equal(a$diagnostics[["W"]], 0.25)
+  shifted <- audit_cv(xy + 1e7, 1:3,
+                      prediction_target(q$locations + 1e7, q$weights), spatial_covariance(1, 0.8))
+  expect_equal(shifted$diagnostics, a$diagnostics)
+})
+
+test_that("comparison uses absolute signed contrasts and preserves ties", {
+  xy <- cbind(c(0, 1, 2, 4), 0)
+  f <- spatial_folds(xy, 2)
+  q <- rbind(c(1, 1), c(3, 0))
+  result <- compare_cv_schemes(xy, list(a = f, b = f), q, spatial_covariance(1, 0.7))
+  expect_equal(result$table$selection_probability, c(0.5, 0.5))
+  expect_equal(result$table$criterion_value, abs(result$table$J2))
+  expect_error(compare_cv_schemes(xy, list(a = f), q), "covariance")
+  expect_error(compare_cv_schemes(xy, list(f), q, criterion = "W"), "names")
+  expect_equal(compare_cv_schemes(xy, list(a = f), q, criterion = "W")$table$selection_probability, 1)
+})
+
+test_that("projected spatial input checks CRS and geometry", {
+  skip_if_not_installed("sf")
+  p <- sf::st_as_sf(data.frame(x = 1:6, y = rep(1:2, 3)), coords = 1:2, crs = 3857)
+  q <- prediction_target(p[1:2, ])
+  expect_s3_class(audit_cv(p, rep(1:2, 3), q), "spcv_audit")
+  ll <- sf::st_transform(p, 4326)
+  expect_error(prediction_target(ll), "projected")
+  expect_error(audit_cv(p, rep(1:2, 3), matrix(1:4, 2)), "both")
+  different <- sf::st_transform(p, 32630)
+  expect_error(audit_cv(p, rep(1:2, 3), different), "CRS differ")
+})
+
+test_that("optional kNNDM gives validated folds without changing RNG", {
+  skip_if_not_installed("CAST")
+  skip_if_not_installed("sf")
+  set.seed(42)
+  xy <- matrix(runif(80), 40, 2)
+  q <- matrix(runif(40), 20, 2)
+  before <- .Random.seed
+  f <- spatial_folds(xy, 3, "knndm", target = q, seed = 12)
+  expect_identical(.Random.seed, before)
+  expect_s3_class(f, "spcv_folds")
+  expect_equal(sort(unlist(lapply(f, `[[`, "test"))), seq_len(40))
+})
