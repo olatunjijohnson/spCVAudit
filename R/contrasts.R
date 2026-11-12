@@ -4,7 +4,7 @@
   mass <- numeric(length(cuts))
   for (i in seq_along(x)) mass[match(x[i], cuts)] <- mass[match(x[i], cuts)] + wx[i]
   for (i in seq_along(y)) mass[match(y[i], cuts)] <- mass[match(y[i], cuts)] - wy[i]
-  difference <- head(cumsum(mass), -1L)
+  difference <- utils::head(cumsum(mass), -1L)
   widths <- diff(cuts)
   p <- sum(widths * pmax(difference, 0))
   n <- sum(widths * pmax(-difference, 0))

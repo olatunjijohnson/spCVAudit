@@ -15,7 +15,7 @@ URL: https://olatunjijohnson.github.io/spCVAudit/,
     https://github.com/olatunjijohnson/spCVAudit
 BugReports: https://github.com/olatunjijohnson/spCVAudit/issues
 Depends: R (>= 4.1.0)
-Imports: stats, graphics, grDevices, utils
+Imports: stats, graphics, utils
 Suggests: sf, CAST, gstat, testthat (>= 3.0.0), knitr, rmarkdown
 VignetteBuilder: knitr
 Encoding: UTF-8

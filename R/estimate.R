@@ -97,7 +97,7 @@ estimate_covariance <- function(locations, response, n_bins = 15L, cutoff = NULL
   loss <- vapply(grid, solve_range, numeric(1))
   local <- which(loss[2:80] <= loss[1:79] & loss[2:80] <= loss[3:81]) + 1L
   local <- local[vapply(local, function(i) loss[i] < max(loss[i - 1L], loss[i + 1L]) - 1e-14, logical(1))]
-  trials <- c(grid[which.min(loss)], grid[1], tail(grid, 1))
+  trials <- c(grid[which.min(loss)], grid[1], utils::tail(grid, 1))
   for (i in local)
     trials <- c(trials, stats::optimize(solve_range, grid[c(i - 1L, i + 1L)], tol = 1e-10)$minimum)
   solutions <- lapply(trials, solve_range, coefficients = TRUE)
