@@ -27,6 +27,15 @@ install.packages("remotes")
 remotes::install_github("olatunjijohnson/spCVAudit")
 ```
 
+The tutorials are available on the website. To also install local copies
+for `vignette(package = "spCVAudit")`, use:
+
+``` r
+
+install.packages(c("knitr", "rmarkdown"))
+remotes::install_github("olatunjijohnson/spCVAudit", build_vignettes = TRUE)
+```
+
 Version 0.1.0 is available from GitHub. It is prepared for CRAN
 submission but has not been submitted to, or accepted by, CRAN. Core
 calculations use only base and recommended R packages. Install `sf` for

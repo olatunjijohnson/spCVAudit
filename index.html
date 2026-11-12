@@ -71,12 +71,16 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"olatunjijohnson/spCVAudit"</span><span class="op">)</span></span></code></pre></div>
+<p>The tutorials are available on the website. To also install local copies for <code>vignette(package = "spCVAudit")</code>, use:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"knitr"</span>, <span class="st">"rmarkdown"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"olatunjijohnson/spCVAudit"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>Version 0.1.0 is available from GitHub. It is prepared for CRAN submission but has not been submitted to, or accepted by, CRAN. Core calculations use only base and recommended R packages. Install <code>sf</code> for projected spatial objects and <code>CAST</code> for the optional kNNDM constructor.</p>
 </div>
 <div class="section level2">
 <h2 id="a-first-comparison">A first comparison<a class="anchor" aria-label="anchor" href="#a-first-comparison"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://olatunjijohnson.github.io/spCVAudit/">spCVAudit</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Numeric coordinates must share a projected coordinate system and units.</span></span>
