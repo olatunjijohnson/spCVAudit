@@ -11,7 +11,7 @@ reference calculations in *Nearest-neighbour distances and prediction error in
 spatial cross-validation*.
 
 **[Website and tutorials](https://olatunjijohnson.github.io/spCVAudit/)** ·
-**[Paper and reproducibility code](https://github.com/olatunjijohnson/spLeakage-paper)** ·
+**[Paper and reproducibility code](https://github.com/olatunjijohnson/spCVAudit-paper)** ·
 **[Report a problem](https://github.com/olatunjijohnson/spCVAudit/issues)**
 
 ## Install
@@ -91,18 +91,13 @@ not a correction for an arbitrary fitted prediction model.
 - [Understand the Gaussian identity and its limits](https://olatunjijohnson.github.io/spCVAudit/articles/theory-and-limits.html)
 - [Audit log-cadmium predictions in the Swiss Jura](https://olatunjijohnson.github.io/spCVAudit/articles/jura.html)
 
-## Relationship to spLeakage and the paper
+## Reproducing the paper
 
-spCVAudit is a focused successor to the spatial CV diagnostics developed in
-spLeakage. It uses the paper's names `J1` and `J2`, supports weighted targets and
-explicit ties, and exposes the Gaussian decomposition and bound. Older leakage
-checks and experimental error-correction functions are not part of this API.
-The original spLeakage package remains separate.
-
-The paper repository preserves the exact spLeakage source snapshot and fitting
-procedure used for its retained results. Installing spCVAudit is not a replacement
-for running that fixed reproduction environment. Its tutorials identify which
-calculations reproduce the theory and which illustrate a new analysis.
+The [paper repository](https://github.com/olatunjijohnson/spCVAudit-paper)
+preserves the exact implementation and fitting procedure used for the paper's
+results. Installing spCVAudit is not a replacement for running that fixed
+reproduction environment. The tutorials identify which calculations reproduce the
+theory and which illustrate a new analysis.
 
 ## Citation
 

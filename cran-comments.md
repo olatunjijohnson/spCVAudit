@@ -3,9 +3,8 @@
 This is a new submission, version 0.1.1.
 
 spCVAudit provides weighted spatial cross-validation diagnostics and Gaussian
-reference calculations. The name has not previously been used on CRAN. It is a
-separate package from the development package spLeakage; the associated research
-repository preserves the earlier implementation used for the paper's results.
+reference calculations. The name has not previously been used on CRAN. The associated research repository preserves the implementation used for the
+paper's results.
 
 The package has no compiled code. Core functions need only base and recommended
 R packages. Optional spatial and kNNDM dependencies are used conditionally. The
