@@ -8,7 +8,7 @@ are used only to evaluate the final predictions.
 
 This tutorial uses one fold construction and the new package’s
 covariance estimator. The [paper
-repository](https://github.com/olatunjijohnson/spLeakage-paper) contains
+repository](https://github.com/olatunjijohnson/spCVAudit-paper) contains
 the fixed fitting implementation, 40 fold constructions, alternative
 targets and retained results used in the paper. Tutorial results are an
 illustration, not a replacement for that complete reproduction.

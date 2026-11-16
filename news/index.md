@@ -21,6 +21,5 @@ Initial release of a focused spatial cross-validation audit package.
   decomposition, its positive-nugget bound, and conditional target MSE.
 - Supply four worked tutorials and a complete function reference.
 
-This is a separate package from spLeakage. The paper’s retained
-computations keep their original package snapshot; the new interface
-does not change those results.
+The paper’s retained computations keep their original implementation;
+this package does not change those results.

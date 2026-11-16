@@ -64,7 +64,7 @@
 <p><strong>Compare spatial cross-validation with the places where you need predictions.</strong></p>
 <p><a href="https://github.com/olatunjijohnson/spCVAudit/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/olatunjijohnson/spCVAudit/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R package checks"></a></p>
 <p>spCVAudit compares validation-to-training distances with target-to-training distances, adds information about spatial correlation, and helps you assess candidate CV schemes. It implements the nearest-neighbour contrasts and Gaussian reference calculations in <em>Nearest-neighbour distances and prediction error in spatial cross-validation</em>.</p>
-<p><strong><a href="https://olatunjijohnson.github.io/spCVAudit/">Website and tutorials</a></strong> · <strong><a href="https://github.com/olatunjijohnson/spLeakage-paper" class="external-link">Paper and reproducibility code</a></strong> · <strong><a href="https://github.com/olatunjijohnson/spCVAudit/issues" class="external-link">Report a problem</a></strong></p>
+<p><strong><a href="https://olatunjijohnson.github.io/spCVAudit/">Website and tutorials</a></strong> · <strong><a href="https://github.com/olatunjijohnson/spCVAudit-paper" class="external-link">Paper and reproducibility code</a></strong> · <strong><a href="https://github.com/olatunjijohnson/spCVAudit/issues" class="external-link">Report a problem</a></strong></p>
 <div class="section level2">
 <h2 id="install">Install<a class="anchor" aria-label="anchor" href="#install"></a>
 </h2>
@@ -154,10 +154,9 @@
 </ul>
 </div>
 <div class="section level2">
-<h2 id="relationship-to-spleakage-and-the-paper">Relationship to spLeakage and the paper<a class="anchor" aria-label="anchor" href="#relationship-to-spleakage-and-the-paper"></a>
+<h2 id="reproducing-the-paper">Reproducing the paper<a class="anchor" aria-label="anchor" href="#reproducing-the-paper"></a>
 </h2>
-<p>spCVAudit is a focused successor to the spatial CV diagnostics developed in spLeakage. It uses the paper’s names <code>J1</code> and <code>J2</code>, supports weighted targets and explicit ties, and exposes the Gaussian decomposition and bound. Older leakage checks and experimental error-correction functions are not part of this API. The original spLeakage package remains separate.</p>
-<p>The paper repository preserves the exact spLeakage source snapshot and fitting procedure used for its retained results. Installing spCVAudit is not a replacement for running that fixed reproduction environment. Its tutorials identify which calculations reproduce the theory and which illustrate a new analysis.</p>
+<p>The <a href="https://github.com/olatunjijohnson/spCVAudit-paper" class="external-link">paper repository</a> preserves the exact implementation and fitting procedure used for the paper’s results. Installing spCVAudit is not a replacement for running that fixed reproduction environment. The tutorials identify which calculations reproduce the theory and which illustrate a new analysis.</p>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>

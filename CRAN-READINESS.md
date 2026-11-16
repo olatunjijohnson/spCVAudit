@@ -33,6 +33,5 @@ submission form](https://cran.r-project.org/submit.html) and complete
 the maintainer confirmation. Passing these checks does not guarantee
 CRAN acceptance.
 
-The source under `spLeakage-paper/package/` remains a separate, frozen
-research dependency. It is not the spCVAudit package submitted for
-review.
+The paper repository’s frozen research implementation is separate from
+the spCVAudit package submitted for review.
