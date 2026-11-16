@@ -1,6 +1,6 @@
 ## Submission
 
-This is a new submission, version 0.1.0.
+This is a new submission, version 0.1.1.
 
 spCVAudit provides weighted spatial cross-validation diagnostics and Gaussian
 reference calculations. The name has not previously been used on CRAN. It is a

@@ -1,0 +1,17 @@
+{
+  "title": "spCVAudit: Audit Spatial Cross-Validation Against Prediction Targets",
+  "upload_type": "software",
+  "description": "R package that compares spatial cross-validation designs with a declared prediction target using nearest-neighbour distances and correlation contrasts. It supports weighted targets, explicit fold validation, selection among candidate schemes and Gaussian reference calculations. Companion software to \"Nearest-neighbour distances and prediction error in spatial cross-validation\" by Olatunji Johnson.",
+  "creators": [
+    {
+      "name": "Johnson, Olatunji",
+      "affiliation": "Department of Mathematics, University of Manchester",
+      "orcid": "0000-0002-4080-0999"
+    }
+  ],
+  "license": "MIT",
+  "keywords": ["R package", "spatial cross-validation", "kriging", "map accuracy"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/olatunjijohnson/spCVAudit-paper", "relation": "isSupplementTo", "resource_type": "software"}
+  ]
+}

@@ -1,8 +1,9 @@
 Package: spCVAudit
 Title: Audit Spatial Cross-Validation Against Prediction Targets
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Olatunji", "Johnson",
-    email = "olatunjijohnson21111@gmail.com", role = c("aut", "cre"))
+    email = "olatunjijohnson21111@gmail.com", role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-4080-0999"))
 Description: Compare spatial cross-validation designs with a declared prediction
     target using nearest-neighbour distances and correlation contrasts. Supports
     weighted targets, explicit fold validation, selection among candidate schemes,

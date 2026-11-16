@@ -1,6 +1,6 @@
 # Release preparation
 
-Version **0.1.0** is available from GitHub. It has **not** been submitted to CRAN.
+Version **0.1.1** is available from GitHub. It has **not** been submitted to CRAN.
 
 The local `R CMD check --as-cran` passed on Ubuntu 24.04 with R 4.6.1:
 **0 errors, 0 warnings, 1 note**. The sole note identifies a new submission.
