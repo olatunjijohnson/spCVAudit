@@ -1,5 +1,10 @@
 # Changelog
 
+## spCVAudit 0.1.1
+
+- Add the author ORCID and Zenodo archive metadata. No changes to
+  package code.
+
 ## spCVAudit 0.1.0
 
 Initial release of a focused spatial cross-validation audit package.

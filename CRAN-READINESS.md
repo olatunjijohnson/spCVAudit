@@ -1,6 +1,6 @@
 # Release preparation
 
-Version **0.1.0** is available from GitHub. It has **not** been
+Version **0.1.1** is available from GitHub. It has **not** been
 submitted to CRAN.
 
 The local `R CMD check --as-cran` passed on Ubuntu 24.04 with R 4.6.1:
